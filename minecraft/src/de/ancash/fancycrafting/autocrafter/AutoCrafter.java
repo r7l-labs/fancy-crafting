@@ -100,8 +100,7 @@ public class AutoCrafter implements Listener {
 			List<IRecipe> recipes = check1();
 			Bukkit.getScheduler().runTaskLater(plugin, () -> craft(recipes), 1);
 		} catch (Throwable th) {
-			plugin.getLogger().severe("Error while checking recipes: " + th.getMessage());
-			th.printStackTrace();
+			plugin.getLogger().log(Level.SEVERE, "Error while checking recipes", th);
 		} finally {
 			Bukkit.getScheduler().runTaskLater(plugin, () -> computing.set(false), 20);
 		}

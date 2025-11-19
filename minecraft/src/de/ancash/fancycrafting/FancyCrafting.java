@@ -213,7 +213,7 @@ public class FancyCrafting extends JavaPlugin {
 			fc.set(path, null);
 			fc.createSection(path, ItemSerializer.INSTANCE.serializeItemStack(item));
 		} catch (Exception ex) {
-
+			getLogger().log(Level.WARNING, "Failed to transform ItemStack at path: " + path, ex);
 		}
 		fc.save(file);
 	}

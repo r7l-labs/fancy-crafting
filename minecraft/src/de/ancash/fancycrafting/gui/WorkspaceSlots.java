@@ -36,7 +36,8 @@ public class WorkspaceSlots {
 				else
 					builder.append(f.getName()).append(": ").append(o == null ? "null" : o).append('\n'); //$NON-NLS-1$ //$NON-NLS-2$
 			} catch (IllegalArgumentException | IllegalAccessException e) {
-				e.printStackTrace();
+				// This should never happen as we're setting accessible to true
+				builder.append(f.getName()).append(": <error>").append('\n');
 			}
 		}
 		return builder.toString().substring(0, builder.toString().length() - 1);

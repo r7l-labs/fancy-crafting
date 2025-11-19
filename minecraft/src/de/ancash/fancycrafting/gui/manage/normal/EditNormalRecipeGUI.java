@@ -30,7 +30,8 @@ public class EditNormalRecipeGUI extends AbstractRecipeEditGUI {
 			player.sendMessage(plugin.getResponse().RECIPE_SAVED);
 			plugin.getRecipeManager().reloadRecipes();
 		} catch (InvalidRecipeException e) {
-			e.printStackTrace();
+			plugin.getLogger().log(Level.SEVERE, "Failed to save recipe: " + recipeName, e);
+			player.sendMessage("§cFailed to save recipe. Check console for details.");
 		}
 	}
 

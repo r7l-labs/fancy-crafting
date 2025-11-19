@@ -45,6 +45,7 @@ public class IMatrix<E> implements Cloneable {
 	}
 
 	public void print() {
+		// Debug method - prints matrix structure to console
 		for (int a = 0; a < height; a++) {
 			for (int b = 0; b < width; b++)
 				System.out.print(array[a * width + b] == null ? "0 " : "1 "); //$NON-NLS-1$ //$NON-NLS-2$
