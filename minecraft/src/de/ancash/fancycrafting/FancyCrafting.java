@@ -39,7 +39,10 @@ import de.ancash.fancycrafting.autocrafter.item.AutoCrafterItemInitSubCommand;
 import de.ancash.fancycrafting.commands.BlacklistSubCommand;
 import de.ancash.fancycrafting.commands.CreateSubCommand;
 import de.ancash.fancycrafting.commands.EditSubCommand;
+import de.ancash.fancycrafting.commands.ExportSubCommand;
 import de.ancash.fancycrafting.commands.FancyCraftingCommand;
+import de.ancash.fancycrafting.commands.HelpSubCommand;
+import de.ancash.fancycrafting.commands.ListSubCommand;
 import de.ancash.fancycrafting.commands.OpenSubCommand;
 import de.ancash.fancycrafting.commands.ReloadSubCommand;
 import de.ancash.fancycrafting.commands.ViewSubCommand;
@@ -143,11 +146,14 @@ public class FancyCrafting extends JavaPlugin {
 	protected void loadCommands() {
 		FancyCraftingCommand cmd = new FancyCraftingCommand(this);
 		loadSubCommands(cmd);
+		cmd.addSubCommand(new HelpSubCommand(this, "help", "?"));
 		cmd.addSubCommand(new ReloadSubCommand(this, "reload", "rl"));
 		cmd.addSubCommand(new CreateSubCommand(this, "create"));
 		cmd.addSubCommand(new OpenSubCommand(this, "open"));
 		cmd.addSubCommand(new EditSubCommand(this, "edit"));
 		cmd.addSubCommand(new ViewSubCommand(this, "view"));
+		cmd.addSubCommand(new ListSubCommand(this, "list", "ls"));
+		cmd.addSubCommand(new ExportSubCommand(this, "export"));
 		cmd.addSubCommand(new AutoCrafterItemEditorSubCommand(singleton, "acie"));
 		cmd.addSubCommand(new AutoCrafterItemInitSubCommand(singleton, "acii"));
 		getCommand("fc").setExecutor(cmd);
