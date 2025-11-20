@@ -59,6 +59,7 @@ import de.ancash.fancycrafting.gui.manage.normal.ViewNormalRecipeGUI;
 import de.ancash.fancycrafting.gui.manage.random.CreateRandomRecipeGUI;
 import de.ancash.fancycrafting.gui.manage.random.EditRandomRecipeGUI;
 import de.ancash.fancycrafting.gui.manage.random.ViewRandomRecipeGUI;
+import de.ancash.fancycrafting.listeners.InventoryCraftingBlocker;
 import de.ancash.fancycrafting.listeners.WorkbenchClickListener;
 import de.ancash.fancycrafting.listeners.WorkbenchOpenListener;
 import de.ancash.fancycrafting.recipe.IRandomRecipe;
@@ -162,8 +163,11 @@ public class FancyCrafting extends JavaPlugin {
 	protected void loadListeners() {
 		HandlerList.unregisterAll(this);
 		PluginManager pm = Bukkit.getServer().getPluginManager();
-		if (config.getBoolean("crafting.use-custom-gui"))
+		if (config.getBoolean("crafting.use-custom-gui")) {
 			pm.registerEvents(new WorkbenchOpenListener(this), this);
+			// Block all vanilla crafting (2x2 and 3x3) when custom GUI is enabled
+			pm.registerEvents(new InventoryCraftingBlocker(this), this);
+		}
 
 		pm.registerEvents(new WorkbenchClickListener(this, config.getBoolean("crafting.use-custom-gui"),
 				config.getBoolean("crafting.support-vanilla-3x3"), config.getBoolean("crafting.support-vanilla-2x2")),

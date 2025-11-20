@@ -69,7 +69,16 @@
 		</repository>
 		<repository>
 			<id>paper-repo</id>
-			<url>https://papermc.io/repo/repository/maven-public/</url>
+			<url>https://repo.papermc.io/repository/maven-public/</url>
+		</repository>
+		<repository>
+			<id>github</id>
+			<name>GitHub Ancash Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/Ancash/ilibrary</url>
+		</repository>
+		<repository>
+			<id>wolfyscript</id>
+			<url>https://maven.wolfyscript.com/repository/public/</url>
 		</repository>
 	</repositories>
 	<dependencies>
@@ -78,6 +87,19 @@
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot-api</artifactId>
 			<version>1.19.2-R0.1-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>de.ancash</groupId>
+			<artifactId>ilibrary</artifactId>
+			<version>3.8.4</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>de.ancash</groupId>
+			<artifactId>nbtnexus</artifactId>
+			<version>1.1.0</version>
 			<scope>provided</scope>
 		</dependency>
 		
@@ -94,6 +116,18 @@
 			<artifactId>bstats-bukkit</artifactId>
 			<version>3.1.0</version>
 			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>com.wolfyscript.customcrafting</groupId>
+			<artifactId>customcrafting-spigot</artifactId>
+			<version>4.16.7.2</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.wolfyscript.wolfyutilities</groupId>
+			<artifactId>wolfyutilities</artifactId>
+			<version>3.16.1.0</version>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 	<distributionManagement>

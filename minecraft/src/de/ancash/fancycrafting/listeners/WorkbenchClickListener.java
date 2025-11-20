@@ -64,7 +64,9 @@ public class WorkbenchClickListener implements Listener {
 	@EventHandler(ignoreCancelled = true)
 	public void onClick(InventoryClickEvent event) {
 		InventoryType type = event.getInventory().getType();
-		if (useCustom && type == InventoryType.WORKBENCH)
+		
+		// If custom GUI is enabled, block ALL vanilla crafting completely
+		if (useCustom && (type == InventoryType.WORKBENCH || type == InventoryType.CRAFTING))
 			return;
 
 		if (type != InventoryType.CRAFTING && type != InventoryType.WORKBENCH)
@@ -94,7 +96,9 @@ public class WorkbenchClickListener implements Listener {
 	@EventHandler
 	public void onRecipePrepare(PrepareItemCraftEvent event) throws Exception {
 		InventoryType type = event.getInventory().getType();
-		if (useCustom && type == InventoryType.WORKBENCH)
+		
+		// If custom GUI is enabled, block ALL vanilla crafting completely
+		if (useCustom && (type == InventoryType.WORKBENCH || type == InventoryType.CRAFTING))
 			return;
 
 		if (type == InventoryType.CRAFTING && !support2x2)

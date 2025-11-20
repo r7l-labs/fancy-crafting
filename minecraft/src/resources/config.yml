@@ -16,6 +16,9 @@ crafting:
    perms-for-vanilla-recipes: false
    perms-for-quick-crafting: false
    vanilla-recipes-accept-plain-items-only: true
+   # When true, players MUST use the custom GUI for crafting (vanilla crafting disabled)
+   # Blocks both 2x2 player inventory crafting and 3x3 workbench crafting
+   # Clicking on workbenches or attempting to craft will open the custom GUI instead
    use-custom-gui: true
    cooldown: 3
    cooldown-message: §eWoah! Slow down
