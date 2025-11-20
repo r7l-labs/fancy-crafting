@@ -1,0 +1,21 @@
+# FancyCrafting Configuration
+
+# Should vanilla crafting be completely disabled?
+# When true, players cannot craft in their inventory or at crafting tables
+disable-vanilla-crafting: true
+
+# Should players be able to use the custom crafting GUI?
+enable-custom-gui: true
+
+# Default crafting grid size (width x height)
+# Minimum: 3x3, Maximum: 6x6
+default-grid-size:
+  width: 3
+  height: 3
+
+# Messages
+messages:
+  gui-title: "&6&lCustom Crafting"
+  no-permission: "&cYou don't have permission to use this command."
+  reload-success: "&aConfiguration reloaded successfully!"
+  usage: "&eUsage: /craft [3-6]"

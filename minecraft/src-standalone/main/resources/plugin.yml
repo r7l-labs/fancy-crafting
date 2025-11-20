@@ -1,0 +1,27 @@
+name: FancyCrafting
+version: ${project.version}
+main: com.r7llabs.fancycrafting.FancyCraftingPlugin
+api-version: 1.13
+author: R7L Labs
+description: Custom crafting GUI plugin - blocks vanilla crafting and provides enhanced crafting interface
+website: https://github.com/r7l-labs/fancy-crafting
+
+commands:
+  craft:
+    description: Open the custom crafting GUI
+    usage: /craft [size]
+    aliases: [fc, fancycraft, crafting]
+    
+permissions:
+  fancycrafting.*:
+    description: Grants all FancyCrafting permissions
+    default: op
+    children:
+      fancycrafting.use: true
+      fancycrafting.admin: true
+  fancycrafting.use:
+    description: Allows using the crafting GUI
+    default: true
+  fancycrafting.admin:
+    description: Admin permissions for FancyCrafting
+    default: op
